@@ -6,13 +6,18 @@ import {
     getVisitCount,
 } from '../services/urlService';
 
+const { BASE_URL } = process.env;
+
 export const shortenUrl = async (
     req: Request,
     res: Response
 ): Promise<void> => {
     const { longUrl } = req.body;
     const url = await createShortUrl(longUrl);
-    res.json(url);
+    res.json({
+        shortUrl: `${BASE_URL}/${url.shortUrl}`,
+        longUrl,
+    });
 };
 
 export const redirectUrl = async (
