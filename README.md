@@ -53,7 +53,7 @@
 
 ### Create Short URL
 
-- **URL**: `/api/shorten`
+- **URL**: `/shorten`
 - **Method**: `POST`
 - **Description**: Creates a shortened URL for the given long URL.
 - **Request Body**:
